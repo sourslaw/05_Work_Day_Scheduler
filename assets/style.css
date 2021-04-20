@@ -8,6 +8,14 @@ header {
 	margin-bottom: 50px;
 }
 
+input {
+	height: 75px;
+}
+
+.input-group-text {
+	width: 150px;
+}
+
 textarea {
   background: transparent;
   border: none;

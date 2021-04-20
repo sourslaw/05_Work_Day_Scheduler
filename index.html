@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,6 +8,9 @@
 	<!-- boostrap cdn -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<!-- jQuery cdn -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
@@ -20,31 +23,119 @@
 </head>
 
 <body>
+	<!-- jumbotron header -->
 	<header class="jumbotron">
 		<h1 class="display-3">Work Day Scheduler</h1>
 		<p class="lead">A simple calendar app for scheduling your work day</p>
 		<p id="currentDay" class="lead"></p>
 	</header>
+
 	<div class="container justify-content-center" id="scheduleField">
 		<!-- Timeblocks go here -->
-		<!-- <div class="row">
-			<div class="col-lg-2">
-				<p>1</p>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">09:00 am</span>
+						<input type="text" class="form-control" name="itemField" id="0900AM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
 			</div>
-			<div class="col-lg-10">
-				<div class="input-group mb-3">
-					<input type="text" class="form-control" placeholder="Recipient's username"
-						aria-label="Recipient's username" aria-describedby="button-addon2">
-					<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-				</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">10:00 am</span>
+						<input type="text" class="form-control" name="itemField" id="1000AM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
 			</div>
-		</div> -->
-
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">11:00 am</span>
+						<input type="text" class="form-control" name="itemField" id="1100AM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">12:00 pm</span>
+						<input type="text" class="form-control" name="itemField" id="1200PM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">1:00 pm</span>
+						<input type="text" class="form-control" name="itemField" id="0100PM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">02:00 pm</span>
+						<input type="text" class="form-control" name="itemField" id="0200PM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">03:00 pm</span>
+						<input type="text" class="form-control" name="itemField" id="0300PM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">04:00 pm</span>
+						<input type="text" class="form-control" name="itemField" id="0400PM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-lg-12">
+				<form class="taskForm">
+					<div class="input-group">
+						<span class="input-group-text">05:00 pm</span>
+						<input type="text" class="form-control" name="itemField" id="0500PM">
+						<button class="btn btn-outline-secondary">save</button>
+					</div>
+				</form>
+			</div>
+		</div>
 
 	</div>
 
-	<!-- jquery & moment scripts -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- moment script -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 	<!-- bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -54,4 +145,4 @@
 	<script src="./assets/script.js"></script>
 </body>
 
-</html>
+</html> -->
