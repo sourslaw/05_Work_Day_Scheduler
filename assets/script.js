@@ -1,6 +1,4 @@
 
-
-
 // form
 var formEl = $('.taskForm');
 // button
@@ -18,7 +16,6 @@ const fivePM = $('#0500PM');
 
 
 function handleFormSubmit(event) {
-    // Prevent the default behavior
 	event.preventDefault();
 
 	localStorage.setItem('0900AM', JSON.stringify(`${nineAM.val()}`));
@@ -35,7 +32,16 @@ function handleFormSubmit(event) {
 // Submit event on the form
 formEl.on('submit', handleFormSubmit);
 
-
+// populate saved from local storage
+$('#0900AM').val(JSON.parse(localStorage.getItem('0900AM')));
+$('#1000AM').val(JSON.parse(localStorage.getItem('1000AM')));
+$('#1100AM').val(JSON.parse(localStorage.getItem('1100AM')));
+$('#1200PM').val(JSON.parse(localStorage.getItem('1200PM')));
+$('#0100PM').val(JSON.parse(localStorage.getItem('0100PM')));
+$('#0200PM').val(JSON.parse(localStorage.getItem('0200PM')));
+$('#0300PM').val(JSON.parse(localStorage.getItem('0300PM')));
+$('#0400PM').val(JSON.parse(localStorage.getItem('0400PM')));
+$('#0500PM').val(JSON.parse(localStorage.getItem('0500PM')));
 
 
 // moment
