@@ -50,39 +50,18 @@ $('#17').val(JSON.parse(localStorage.getItem('0500PM')));
 })();
 
 
-// changey
+// dynamic text field highlighting
 const today = moment();
 // const hour = parseInt(today.format("HH"))
-const hour = 10;
+const hour = 13;
 
-
-// $('input').each(function() {
-// 	let fieldHour = parseInt(`${this.id}`);
-// 	if (hour == fieldHour) {
-// 		$('input').addClass('present'); 
-// 	} else if (hour < fieldHour) {
-// 		$('input').addClass('past'); 
-// 	} else {
-// 		$('input').addClass('future'); 
-// 	};
-// 	console.log(`hour: ${hour} | input id: ${fieldHour}`)
-// });
-
-// $('input').each(function() { 
-// 	let fart = `${this.id}`
-
-// 	if (fart == '10') {
-// 		console.log(fart);
-// 		$('input').addClass('present')
-// 	}
-// });
-
-// $(`#${hour}`).addClass('present')
-
-let placeH = $(`#${hour}`);
 // all inputs are grey on default . . 
 $('input').addClass('past');
 // current hour is red
-$(placeH).addClass('present');
+$($(`#${hour}`)).addClass('present');
 // all after the current hour is future
-$(placeH).nextAll('input').addClass('future');
+$(`input:gt(${maker()})`).addClass('future');
+// function for dynamic indexing
+function maker() {
+	return hour - 9;
+};
