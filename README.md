@@ -17,7 +17,7 @@
 
 ### Installation
 - The project is uploaded to [GitHub](https://github.com/) at the following repository: [here](https://github.com/sourslaw/05_Work_Day_Scheduler)
-<!-- - Deployed application may be seen: [here]() -->
+- Deployed application may be seen: [here](https://sourslaw.github.io/05_Work_Day_Scheduler/)
 
 ### Usage
 . . .
@@ -25,6 +25,7 @@
 ### Credits
 - [jQuery](https://jquery.com/)
 - [Moment.js](https://momentjs.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 ### License
 - Licensed under the [MIT](https://opensource.org/licenses/mit-license.php) license.
