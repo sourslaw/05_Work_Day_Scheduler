@@ -1,18 +1,17 @@
 
 // form
 var formEl = $('.taskForm');
-// button
-const buttonEl = $('.btn');
+
 // hour of day fields
-const nineAM = $('#0900AM');
-const tenAM = $('#1000AM');
-const elevenAM = $('#1100AM');
-const noon = $('#1200AM');
-const onePM = $('#0100PM');
-const twoPM = $('#0200PM');
-const threePM = $('#0300PM');
-const fourPM = $('#0400PM');
-const fivePM = $('#0500PM');
+const nineAM = $('#09');
+const tenAM = $('#10');
+const elevenAM = $('#11');
+const noon = $('#12');
+const onePM = $('#13');
+const twoPM = $('#14');
+const threePM = $('#15');
+const fourPM = $('#16');
+const fivePM = $('#17');
 
 
 function handleFormSubmit(event) {
@@ -33,17 +32,57 @@ function handleFormSubmit(event) {
 formEl.on('submit', handleFormSubmit);
 
 // populate saved from local storage
-$('#0900AM').val(JSON.parse(localStorage.getItem('0900AM')));
-$('#1000AM').val(JSON.parse(localStorage.getItem('1000AM')));
-$('#1100AM').val(JSON.parse(localStorage.getItem('1100AM')));
-$('#1200PM').val(JSON.parse(localStorage.getItem('1200PM')));
-$('#0100PM').val(JSON.parse(localStorage.getItem('0100PM')));
-$('#0200PM').val(JSON.parse(localStorage.getItem('0200PM')));
-$('#0300PM').val(JSON.parse(localStorage.getItem('0300PM')));
-$('#0400PM').val(JSON.parse(localStorage.getItem('0400PM')));
-$('#0500PM').val(JSON.parse(localStorage.getItem('0500PM')));
+$('#09').val(JSON.parse(localStorage.getItem('0900AM')));
+$('#10').val(JSON.parse(localStorage.getItem('1000AM')));
+$('#11').val(JSON.parse(localStorage.getItem('1100AM')));
+$('#12').val(JSON.parse(localStorage.getItem('1200PM')));
+$('#13').val(JSON.parse(localStorage.getItem('0100PM')));
+$('#14').val(JSON.parse(localStorage.getItem('0200PM')));
+$('#15').val(JSON.parse(localStorage.getItem('0300PM')));
+$('#16').val(JSON.parse(localStorage.getItem('0400PM')));
+$('#17').val(JSON.parse(localStorage.getItem('0500PM')));
+
+// moment 
+(function theTime() {
+	let timer = moment().format("dddd, MMMM Do, YYYY  |  h:mm a");
+	$("#currentDay").text(timer);
+	setInterval(theTime, 60000);
+})();
 
 
-// moment
-var today = moment();
-$("#currentDay").text(today.format("dddd, MMMM Do, YYYY  |  h:mm a"));
+// changey
+const today = moment();
+// const hour = parseInt(today.format("HH"))
+const hour = 10;
+
+
+// $('input').each(function() {
+// 	let fieldHour = parseInt(`${this.id}`);
+// 	if (hour == fieldHour) {
+// 		$('input').addClass('present'); 
+// 	} else if (hour < fieldHour) {
+// 		$('input').addClass('past'); 
+// 	} else {
+// 		$('input').addClass('future'); 
+// 	};
+// 	console.log(`hour: ${hour} | input id: ${fieldHour}`)
+// });
+
+// $('input').each(function() { 
+// 	let fart = `${this.id}`
+
+// 	if (fart == '10') {
+// 		console.log(fart);
+// 		$('input').addClass('present')
+// 	}
+// });
+
+// $(`#${hour}`).addClass('present')
+
+let placeH = $(`#${hour}`);
+// all inputs are grey on default . . 
+$('input').addClass('past');
+// current hour is red
+$(placeH).addClass('present');
+// all after the current hour is future
+$(placeH).nextAll('input').addClass('future');
