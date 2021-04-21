@@ -52,8 +52,8 @@ $('#17').val(JSON.parse(localStorage.getItem('0500PM')));
 
 // dynamic text field highlighting
 const today = moment();
-// const hour = parseInt(today.format("HH"))
-const hour = 13;
+const hour = parseInt(today.format("HH"))
+// const hour = 15;
 
 // all inputs are grey on default . . 
 $('input').addClass('past');
