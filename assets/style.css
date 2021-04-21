@@ -65,6 +65,10 @@ textarea {
   color: white;
 }
 
+.btn {
+	width: 5rem;
+}
+
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;

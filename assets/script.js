@@ -49,11 +49,10 @@ $('#17').val(JSON.parse(localStorage.getItem('0500PM')));
 	setInterval(theTime, 60000);
 })();
 
-
 // dynamic text field highlighting
 const today = moment();
 const hour = parseInt(today.format("HH"))
-// const hour = 15;
+// const hour = '09';
 
 // all inputs are grey on default . . 
 $('input').addClass('past');
