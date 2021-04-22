@@ -25,7 +25,7 @@
 - Clicking the Save button will save the entered task
 - When the page is reloaded, the tasks will remain until the user deletes the task
 - The date is displayed and the time is dynamically updated every second
-- The task area is dynamically highligted by three colors which correlated with the time of day:
+- The task area is dynamically highligted by three colors which correlate with the time of day:
     - grey = past
     - red = present
     - green = future
