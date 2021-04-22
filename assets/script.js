@@ -52,7 +52,7 @@ $('#17').val(JSON.parse(localStorage.getItem('0500PM')));
 // dynamic text field highlighting
 const today = moment();
 const hour = parseInt(today.format("HH"))
-// const hour = '09';
+// const hour = '11';
 
 // all inputs are grey on default . . 
 $('input').addClass('past');
@@ -64,3 +64,14 @@ $(`input:gt(${maker()})`).addClass('future');
 function maker() {
 	return hour - 9;
 };
+
+// screw around
+
+// $('input').each(function() {
+// 	let i = $(this).attr('id');
+// 	console.log(i)
+	
+// 	if (i == hour) {
+// 		$('input').addClass('present');
+// 	};
+// });

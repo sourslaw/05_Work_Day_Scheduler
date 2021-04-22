@@ -20,7 +20,15 @@
 - Deployed application may be seen: [here](https://sourslaw.github.io/05_Work_Day_Scheduler/)
 
 ### Usage
-. . .
+- The Work Day Scheduler allows the user to enter tasks to help schedule their day by the standard American work hours of 9:00AM to 5:00PM
+- Clicking in the center text box, the user can enter the task/tasks for the hour
+- Clicking the Save button will save the entered task
+- When the page is reloaded, the tasks will remain until the user deletes the task
+- The date is displayed and the time is dynamically updated every second
+- The task area is dynamically highligted by three colors which correlated with the time of day:
+    - grey = past
+    - red = present
+    - green = future
 
 ### Credits
 - [jQuery](https://jquery.com/)
