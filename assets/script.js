@@ -13,7 +13,7 @@ const threePM = $('#15');
 const fourPM = $('#16');
 const fivePM = $('#17');
 
-
+// form fields saved to localStorage
 function handleFormSubmit(event) {
 	event.preventDefault();
 
@@ -42,17 +42,17 @@ $('#15').val(JSON.parse(localStorage.getItem('0300PM')));
 $('#16').val(JSON.parse(localStorage.getItem('0400PM')));
 $('#17').val(JSON.parse(localStorage.getItem('0500PM')));
 
-// moment 
+// moment logic
 (function theTime() {
 	let timer = moment().format("dddd, MMMM Do, YYYY  |  h:mm a");
 	$("#currentDay").text(timer);
 	setInterval(theTime, 60000);
 })();
 
-// dynamic text field highlighting
+
+// dynamic text field highlighting based on the hour
 const today = moment();
 const hour = parseInt(today.format("HH"))
-// const hour = '11';
 
 // all inputs are grey on default . . 
 $('input').addClass('past');
@@ -60,18 +60,7 @@ $('input').addClass('past');
 $($(`#${hour}`)).addClass('present');
 // all after the current hour is future
 $(`input:gt(${maker()})`).addClass('future');
-// function for dynamic indexing
+// function for dynamic indexing of future
 function maker() {
 	return hour - 9;
 };
-
-// screw around
-
-// $('input').each(function() {
-// 	let i = $(this).attr('id');
-// 	console.log(i)
-	
-// 	if (i == hour) {
-// 		$('input').addClass('present');
-// 	};
-// });
